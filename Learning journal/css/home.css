@@ -61,6 +61,9 @@ ul {
     font-size: 1rem;
     
 }
+.article-link {
+    text-decoration: none;
+}
 .blogs {
    grid-area: blog;
     display: grid;
