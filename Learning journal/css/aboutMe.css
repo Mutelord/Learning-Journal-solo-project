@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+    font-family: "Source Sans 3", sans-serif;
+}
+html, 
+body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "head"
+    "hero"
+    "blog"
+    "foot"
+    ;
+}
+header {
+    padding: 1.5em; 
+    display: flex;
+    justify-content: space-between;
+    grid-area: head;
+}
+.header-img {
+    width: 20px;
+}
+.header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+ul a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+    margin: 0.5em 2em;
+    
+}
+main {
+    padding: 1.5em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "hero"
+    "cose"
+    "stse"
+    "blog"
+    ;
+}
+.hero {
+    margin: 0;
+    grid-area: hero;
+}
+.hero-img {
+    margin: 0;
+    width: 182px;
+}
+
+.hero-headline {
+    font-size: 2.35rem;
+    max-width: 80%;
+    line-height: 1.1;
+}
+.hero p {
+    font-size: 1.125rem;
+}
+.started-section {
+    grid-area: stse;
+}
+.commited-section {
+    grid-area: cose;
+}
+.started-section h2, 
+.commited-section h2 {
+    font-size: 1rem;
+}
+.recent {
+    text-align: center;
+    grid-area: rece;
+    font-size: 1rem;
+}
+/* blogs */
+.blogs {
+    grid-area: blog;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    grid-template-areas: 
+    "rece"
+    "one"
+    "two"
+    "thr";
+    max-width: 550px;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+.blog-img {
+    display: block;
+    margin: 1em 0;
+    width: 95%;
+}
+.blogs h2, .blogs p {
+    margin: 0.5em 0;
+}
+.blog-one {
+    grid-area: one;
+}
+.blog-two {
+    grid-area: two;
+}
+.blog-three {
+    grid-area: thr;
+}
+footer {
+    background-color: #202020;
+    width: 100vw;
+    height: 105px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area: foot;
+    
+}
+footer p {
+    margin: 0.2em;
+}
+.footer-text {
+    font-weight: bold;
+}
+.footer-date {
+    font-weight: 200;
+}
+
+
+
+
+@media (min-width: 768px) {
+.hero {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "heimg . . ."
+    "heimg hehea hehea hehea"
+    "heimg hedes hedes hedes"
+    "heimg . . ."
+    
+    ;
+
+}
+.header-img {
+    width: 34px;
+}
+.hero-img {
+    grid-area: heimg;
+    margin: 0 2em 2em auto;
+}
+.hero-headline {
+    grid-area: hehea;
+    margin: 0;
+    font-size: 1.5rem;
+    max-width: 90%;
+}
+.hero-description {
+    grid-area: hedes;
+    margin: 0;
+}
+.blogs {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        ". rece ."
+        "one two thr";
+        max-width: none;
+    }
+
+    .indented {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
