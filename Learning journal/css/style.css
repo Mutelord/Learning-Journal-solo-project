@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+    font-family: "Source Sans 3", sans-serif;
+}
+html, 
+body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "head"
+    "main"
+    "foot"
+    ;
+}
+header {
+    padding: 1.5em; 
+    display: flex;
+    justify-content: space-between;
+    grid-area: head;
+}
+.header-img {
+    width: 20px;
+}
+.header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+ul a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 3em;
+    margin: 0.5em 0;
+    
+}
+main {
+    grid-area: main;
+}
+ /* Hero */
+.hero {
+    color: white;
+    background-image: url("images/backgroundTableDark.png");
+    padding: 5em 1em 1.5em 1em;
+}
+.hero h1 {
+    font-size: 2rem;
+    max-width: 70vw;
+}
+.hero p {
+    max-width: 70vw;
+    font-size: 1rem;
+    
+}
+.blogs {
+   
+    display: grid;
+    grid-template-columns: 1em 1fr 1em;
+    gap: 1em;
+    grid-template-areas: 
+     ". one ."
+     ". two ."
+     ". thr ."
+     ". fou ."
+     ". fiv ."
+     ". six ."
+     ". mor ."
+     ". . . "
+     ". . . "
+     ". . . "
+     ;
+}
+.blog-one {
+    grid-area: one;
+}
+.blog-two {
+    grid-area: two;
+}
+.blog-three {
+    grid-area: thr;
+}
+.blog-four {
+    grid-area: fou;
+}
+.blog-five {
+    grid-area: fiv;
+}
+.blog-six {
+    grid-area: six;
+}
+/* The hidden blogs */
+.reappear {
+    display: none;
+}
+/* Blog one */
+
+.blog-one-img {
+    border-radius: 5px;
+    width: 100%;
+    display: block;
+    margin: 1.5em auto;
+}
+
+footer {
+    background-color: #202020;
+    width: 100vw;
+    height: 105px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area: foot;
+    
+}
+footer p {
+    margin: 0.2em;
+}
+.footer-text {
+    font-weight: bold;
+}
+.footer-date {
+    font-weight: 200;
+}
+.view-more {
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+    display: block;
+    margin: 0 auto;
+    grid-area: mor;
+}
+@media (min-width: 768px) {
+    .hero {
+        
+    }
+    .reappear {
+        display: block;
+    }
+    .blogs {
+        grid-template-columns: 1em repeat(3,1fr) 1em;
+        grid-template-areas: 
+        ". one two thr ."
+        ". fou fiv six ."
+        ". . mor . ."
+        ". . . . ."
+        ;
+    }
+}
