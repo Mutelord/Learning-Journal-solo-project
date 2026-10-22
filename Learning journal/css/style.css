@@ -12,7 +12,8 @@ body {
     grid-template-columns: 1fr;
     grid-template-areas: 
     "head"
-    "main"
+    "hero"
+    "blog"
     "foot"
     ;
 }
@@ -41,17 +42,15 @@ ul {
     display: flex;
     justify-content: space-between;
     gap: 3em;
-    margin: 0.5em 0;
+    margin: 0.5em 2em;
     
-}
-main {
-    grid-area: main;
 }
  /* Hero */
 .hero {
     color: white;
-    background-image: url("images/backgroundTableDark.png");
+    background-image: url("../images/backgroundTableDark.png");
     padding: 5em 1em 1.5em 1em;
+    grid-area: hero;
 }
 .hero h1 {
     font-size: 2rem;
@@ -63,7 +62,7 @@ main {
     
 }
 .blogs {
-   
+   grid-area: blog;
     display: grid;
     grid-template-columns: 1em 1fr 1em;
     gap: 1em;
@@ -74,7 +73,6 @@ main {
      ". fou ."
      ". fiv ."
      ". six ."
-     ". mor ."
      ". . . "
      ". . . "
      ". . . "
@@ -104,7 +102,7 @@ main {
 }
 /* Blog one */
 
-.blog-one-img {
+.blog-img {
     border-radius: 5px;
     width: 100%;
     display: block;
@@ -137,13 +135,11 @@ footer p {
     font-weight: bold;
     text-decoration: underline;
     display: block;
-    margin: 0 auto;
-    grid-area: mor;
+    margin: 2em auto;
+    width: 15%;
+    text-align: center;
 }
 @media (min-width: 768px) {
-    .hero {
-        
-    }
     .reappear {
         display: block;
     }
@@ -152,8 +148,39 @@ footer p {
         grid-template-areas: 
         ". one two thr ."
         ". fou fiv six ."
-        ". . mor . ."
         ". . . . ."
         ;
+    }
+    .hero {
+        padding-left: 2em;
+    }
+}
+@media (min-width: 1024px) {
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 40vh;
+        padding: 0;
+    }
+    .hero p {
+        max-width: 30vw;
+        margin: 0;
+    }
+    .hero h1 {
+        margin: 0;
+    }
+    .blogs {
+        grid-template-columns: 1em repeat(6,1fr) 1em;
+        grid-auto-rows: minmax();
+        grid-template-areas: 
+        ". one two thr fou fiv six ."
+        ". . . . . . . ."
+        ;
+    }
+    .blog-img {
+        object-fit: cover;
+        max-height: 150px;
     }
 }
