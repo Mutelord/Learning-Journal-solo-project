@@ -133,7 +133,6 @@ footer p {
 }
 @media (min-width: 768px) {
     .indented {
-        margin-top: 22em;
         width: 80%;
         margin: 0 auto;
     }
